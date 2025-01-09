@@ -1,6 +1,6 @@
 # LabOfLegends
 
-![Space Miner](../assets/images/space_background.png)
+![Space Miner](./assets/images/space_background.png)
 
 🚀 Space Miner
 
