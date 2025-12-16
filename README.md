@@ -9,27 +9,26 @@
 ---
 
 ## 🪐 Overview  
-**Space Miner** is a 2D sci-fi platformer where players explore an alien planet, mine rare minerals, and survive environmental hazards. Equipped with a **jetpack** and a **mining laser**, the player navigates the surface and underground caverns while avoiding hostile creatures and dynamic obstacles.
+
+Space Miner is a 2D sci-fi platformer where players explore an alien planet, collect rare minerals, and survive environmental hazards. Equipped with a laser weapon, the player travels across the map, avoids hostile creatures, and gathers all required minerals to complete the mission.
+
+Goal: collect all minerals across the map — once you have them all, the game ends.
 
 ---
 
 ## 🎮 Features  
-✅ **Physics-based movement** with low gravity.  
-✅ **Jetpack mechanics** for vertical and horizontal mobility.  
-✅ **Mining laser** for extracting minerals and fighting enemies.  
-✅ **Procedural terrain generation** for unique mining experiences.  
-✅ **Upgrades** to enhance mining speed, jetpack fuel, and armor.  
-✅ **Dynamic day/night cycle**, affecting enemy behavior and visibility.  
+✅ **Physics-based movement** with low gravity.    
+✅ **Laser Weapon** for fighting enemies.  
+✅ Mineral collection objective (collect them all to win).
 
 ---
 
 ## 🕹️ Controls  
 
-| Action         | Key                 |
+| Action        | Key                 |
 |---------------|---------------------|
-| Move Left     | `A`                 |
-| Move Right    | `D`                 |
-| Jump         | `Space`             |
-| Jetpack Boost | `W`                 |
-| Mine / Shoot  | `Left Mouse Click`   |
-| Interact      | `E`                 |
+| Move Left     | `Left Arrow`        |
+| Move Right    | `Right Arrow`       |
+| Move Up       | `Up Arrow`          |
+| Move Down     | `Down Arrow`        |
+| Shoot         | `Space`             |
