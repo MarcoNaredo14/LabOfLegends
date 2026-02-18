@@ -1,0 +1,195 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Project1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{492BCE76-3148-46D2-AF61-4D83904172F0}|Project1.vcxproj|E:\\Project1\\game.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{492BCE76-3148-46D2-AF61-4D83904172F0}|Project1.vcxproj|solutionrelative:game.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{492BCE76-3148-46D2-AF61-4D83904172F0}|Project1.vcxproj|E:\\Project1\\lives.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{492BCE76-3148-46D2-AF61-4D83904172F0}|Project1.vcxproj|solutionrelative:lives.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{492BCE76-3148-46D2-AF61-4D83904172F0}|Project1.vcxproj|E:\\Project1\\bgmusic.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{492BCE76-3148-46D2-AF61-4D83904172F0}|Project1.vcxproj|solutionrelative:bgmusic.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{492BCE76-3148-46D2-AF61-4D83904172F0}|Project1.vcxproj|E:\\Project1\\bullet.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{492BCE76-3148-46D2-AF61-4D83904172F0}|Project1.vcxproj|solutionrelative:bullet.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{492BCE76-3148-46D2-AF61-4D83904172F0}|Project1.vcxproj|E:\\Project1\\player.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{492BCE76-3148-46D2-AF61-4D83904172F0}|Project1.vcxproj|solutionrelative:player.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{492BCE76-3148-46D2-AF61-4D83904172F0}|Project1.vcxproj|E:\\Project1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{492BCE76-3148-46D2-AF61-4D83904172F0}|Project1.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{492BCE76-3148-46D2-AF61-4D83904172F0}|Project1.vcxproj|E:\\Project1\\scoreboard.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{492BCE76-3148-46D2-AF61-4D83904172F0}|Project1.vcxproj|solutionrelative:scoreboard.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{492BCE76-3148-46D2-AF61-4D83904172F0}|Project1.vcxproj|E:\\Project1\\golditems.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{492BCE76-3148-46D2-AF61-4D83904172F0}|Project1.vcxproj|solutionrelative:golditems.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Project1\\enemy.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:enemy.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "game.hpp",
+              "DocumentMoniker": "E:\\Project1\\game.hpp",
+              "RelativeDocumentMoniker": "game.hpp",
+              "ToolTip": "E:\\Project1\\game.hpp",
+              "RelativeToolTip": "game.hpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-24T18:28:51.284Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "lives.hpp",
+              "DocumentMoniker": "E:\\Project1\\lives.hpp",
+              "RelativeDocumentMoniker": "lives.hpp",
+              "ToolTip": "E:\\Project1\\lives.hpp",
+              "RelativeToolTip": "lives.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-31T19:54:42.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "bgmusic.hpp",
+              "DocumentMoniker": "E:\\Project1\\bgmusic.hpp",
+              "RelativeDocumentMoniker": "bgmusic.hpp",
+              "ToolTip": "E:\\Project1\\bgmusic.hpp",
+              "RelativeToolTip": "bgmusic.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-30T18:12:36.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "golditems.hpp",
+              "DocumentMoniker": "E:\\Project1\\golditems.hpp",
+              "RelativeDocumentMoniker": "golditems.hpp",
+              "ToolTip": "E:\\Project1\\golditems.hpp",
+              "RelativeToolTip": "golditems.hpp",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-29T18:07:07.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "scoreboard.hpp",
+              "DocumentMoniker": "E:\\Project1\\scoreboard.hpp",
+              "RelativeDocumentMoniker": "scoreboard.hpp",
+              "ToolTip": "E:\\Project1\\scoreboard.hpp",
+              "RelativeToolTip": "scoreboard.hpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-28T20:20:16.998Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "enemy.hpp",
+              "DocumentMoniker": "E:\\Project1\\enemy.hpp",
+              "RelativeDocumentMoniker": "enemy.hpp",
+              "ToolTip": "E:\\Project1\\enemy.hpp",
+              "RelativeToolTip": "enemy.hpp",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAACAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-28T18:11:23.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "bullet.hpp",
+              "DocumentMoniker": "E:\\Project1\\bullet.hpp",
+              "RelativeDocumentMoniker": "bullet.hpp",
+              "ToolTip": "E:\\Project1\\bullet.hpp",
+              "RelativeToolTip": "bullet.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-28T15:36:26.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "player.hpp",
+              "DocumentMoniker": "E:\\Project1\\player.hpp",
+              "RelativeDocumentMoniker": "player.hpp",
+              "ToolTip": "E:\\Project1\\player.hpp",
+              "RelativeToolTip": "player.hpp",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAHkAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-26T21:09:47.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "main.cpp",
+              "DocumentMoniker": "E:\\Project1\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "E:\\Project1\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-24T18:06:07.155Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 391,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 428,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

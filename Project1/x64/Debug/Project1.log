@@ -1,0 +1,28 @@
+﻿  main.cpp
+E:\Project1\Game.hpp(142,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+E:\Project1\Game.hpp(143,31): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'main.cpp')
+  
+E:\Project1\Game.hpp(389,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+E:\Project1\Game.hpp(390,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+E:\Project1\Game.hpp(594,27): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+E:\Project1\Game.hpp(594,27): warning C4244:         with
+E:\Project1\Game.hpp(594,27): warning C4244:         [
+E:\Project1\Game.hpp(594,27): warning C4244:             T=float
+E:\Project1\Game.hpp(594,27): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+E:\Project1\Game.hpp(595,27): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+E:\Project1\Game.hpp(595,27): warning C4244:         with
+E:\Project1\Game.hpp(595,27): warning C4244:         [
+E:\Project1\Game.hpp(595,27): warning C4244:             T=float
+E:\Project1\Game.hpp(595,27): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+  Project1.vcxproj -> E:\Project1\x64\Debug\Project1.exe
