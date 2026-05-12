@@ -18,6 +18,14 @@ private:
     int currentFrame = 0;
    
     bool isMoving = false;
+    static constexpr float RENDER_SIZE = 28.0f;
+
+    void updateSpriteLayout() {
+        const sf::FloatRect bounds = sprite.getLocalBounds();
+        sprite.setOrigin(bounds.left + bounds.width / 2.0f, bounds.top + bounds.height / 2.0f);
+        sprite.setScale(RENDER_SIZE / bounds.width, RENDER_SIZE / bounds.height);
+        sprite.setPosition(position.x + 17.5f, position.y + 17.5f);
+    }
 
 public:
     enum Direction { Right, Left, Up, Down } currentDirection = Right;
@@ -52,16 +60,13 @@ public:
             sprite.setTexture(texturesRight[0]);
         }
         
-        sprite.setPosition(position);
-      
-        sprite.setScale(35.0f / sprite.getLocalBounds().width, 
-                       35.0f / sprite.getLocalBounds().height);
+        updateSpriteLayout();
     }
 
     void move(float dx, float dy, float deltaTime) {
         position.x += dx;
         position.y += dy;
-        sprite.setPosition(position);
+        updateSpriteLayout();
         
         isMoving = (dx != 0 || dy != 0);
         
@@ -93,6 +98,7 @@ public:
                         sprite.setTexture(texturesDown[currentFrame]);
                         break;
                 }
+                updateSpriteLayout();
             }
         } else {
             // Reset to standing frame
@@ -111,6 +117,7 @@ public:
                     sprite.setTexture(texturesDown[0]);
                     break;
             }
+            updateSpriteLayout();
         }
     }
 
@@ -127,7 +134,7 @@ public:
 	}
 
     sf::FloatRect getBounds() const {
-        return sprite.getGlobalBounds();
+        return sf::FloatRect(position.x + 3.5f, position.y + 3.5f, 28.0f, 28.0f);
     }
 };
 

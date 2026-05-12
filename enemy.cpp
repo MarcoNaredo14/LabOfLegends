@@ -16,10 +16,18 @@ private:
     std::vector<sf::Texture> texturesUp;
     std::vector<sf::Texture> texturesDown;
     
-    float speed = 1.1f;  // Reduced from 0.5f to 0.3f for slower movement
+    float speed = 1.1f;
     float animationTimer = 0.0f;
     int currentFrame = 0;
     bool isMoving = false;
+    static constexpr float RENDER_SIZE = 30.0f;
+
+    void updateSpriteLayout() {
+        const sf::FloatRect bounds = sprite.getLocalBounds();
+        sprite.setOrigin(bounds.left + bounds.width / 2.0f, bounds.top + bounds.height / 2.0f);
+        sprite.setScale(RENDER_SIZE / bounds.width, RENDER_SIZE / bounds.height);
+        sprite.setPosition(position.x + 17.5f, position.y + 19.0f);
+    }
     bool movingHorizontally;
     bool movingRight = true;  // For horizontal movement
     bool movingDown = true;   // For vertical movement
@@ -30,8 +38,8 @@ private:
     float rightBoundary;  // Rightmost point of movement
     float topBoundary;    // Topmost point of movement
     float bottomBoundary; // Bottommost point of movement
-    float shootTimer = 1.0f;
-    const float Shoot_cooldown = 10.0f;
+    float shootTimer = 0.8f;
+    const float Shoot_cooldown = 2.5f;
 
 public:
     enum Direction { Right, Left, Up, Down } currentDirection = Right;
@@ -72,9 +80,7 @@ public:
             sprite.setTexture(texturesRight[0]);
         }
         
-        sprite.setPosition(position);
-        sprite.setScale(35.0f / sprite.getLocalBounds().width, 
-                       35.0f / sprite.getLocalBounds().height);
+        updateSpriteLayout();
     }
 
     bool canShoot(){
@@ -163,9 +169,10 @@ public:
                     sprite.setTexture(texturesDown[currentFrame]);
                     break;
             }
+            updateSpriteLayout();
         }
         
-        sprite.setPosition(position);
+        updateSpriteLayout();
     }
 
     void draw(sf::RenderWindow& window) {
@@ -177,13 +184,13 @@ public:
     }
 
     sf::FloatRect getBounds() const {
-        return sprite.getGlobalBounds();
+        return sf::FloatRect(position.x + 2.5f, position.y + 2.5f, 30.0f, 30.0f);
     }
 
     // set Position
 	void setPosition(sf::Vector2f pos) {
 		position = pos;
-		sprite.setPosition(position);
+		updateSpriteLayout();
 	}
 
    

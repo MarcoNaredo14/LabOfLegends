@@ -20,6 +20,7 @@
 class GameState;
 class GamePlayState;
 class MenuState;
+class HowToPlayState;
 
 
 
@@ -277,7 +278,7 @@ public:
                         isHorizontalPath = tileMap[row][col-1] == '-' && tileMap[row][col+1] == '-';
                     }
                     
-                    if (rand() % 20 == 0) {
+                    if (rand() % 14 == 0) {
                         float enemyX = (1080.0f - static_cast<float>(maze.getWidth() * CELL_SIZE)) / 2.0f + 
                             static_cast<float>(col * CELL_SIZE);
                         float enemyY = (800.0f - static_cast<float>(maze.getHeight() * CELL_SIZE)) / 2.0f + 
@@ -417,6 +418,14 @@ public:
 
         if (event.type == sf::Event::KeyPressed) {
             switch (event.key.code) {
+                case sf::Keyboard::Escape:
+                    moveRightHeld = false;
+                    moveLeftHeld = false;
+                    moveUpHeld = false;
+                    moveDownHeld = false;
+                    shootHeld = false;
+                    shouldReturnToMenu = true;
+                    break;
                 case sf::Keyboard::Right:
                 case sf::Keyboard::D:
                     moveRightHeld = true;
@@ -467,7 +476,7 @@ public:
     }
 
     void handleInput(sf::RenderWindow& window) override {
-        float moveSpeed = 0.7f;
+        float moveSpeed = 2.30f;
         float dx = 0, dy = 0;
 
         if (!window.hasFocus()) {
@@ -777,23 +786,29 @@ private:
     sf::Font font;
     sf::Text titleText;
     sf::Text playText;
+    sf::Text howToPlayText;
     sf::Text exitText;
     sf::Texture backgroundTexture;
     sf::Sprite backgroundSprite;
     bool switchToPlay = false;
-    int selectedIndex = 0;  // 0: Play, 1: Exit
+    bool switchToHowToPlay = false;
+    int selectedIndex = 0;  // 0: Play, 1: How to Play, 2: Exit
 
     void updateSelectionFromPosition(float x, float y) {
         if (playText.getGlobalBounds().contains(x, y)) {
             selectedIndex = 0;
-        } else if (exitText.getGlobalBounds().contains(x, y)) {
+        } else if (howToPlayText.getGlobalBounds().contains(x, y)) {
             selectedIndex = 1;
+        } else if (exitText.getGlobalBounds().contains(x, y)) {
+            selectedIndex = 2;
         }
     }
 
     void activateSelection(sf::RenderWindow& window) {
         if (selectedIndex == 0) {
             switchToPlay = true;
+        } else if (selectedIndex == 1) {
+            switchToHowToPlay = true;
         } else {
             window.close();
         }
@@ -802,37 +817,42 @@ private:
 public:
     MenuState() {
         if (!font.loadFromFile("menu/menu.otf")) {
-            // Handle font loading error
             std::cout << "menu.otf font not loaded" << std::endl;
         }
         if (!backgroundTexture.loadFromFile("menu/backgroundmenu.png")) {
-            // Handle background loading error
             std::cout << "background_menu.png image not loaded" << std::endl;
         }
         backgroundSprite.setTexture(backgroundTexture);
 
-        backgroundSprite.setScale(1080.f / backgroundSprite.getLocalBounds().width, 800.f / backgroundSprite.getLocalBounds().height); // Use .f for float division
+        backgroundSprite.setScale(1080.f / backgroundSprite.getLocalBounds().width, 800.f / backgroundSprite.getLocalBounds().height);
 
         titleText.setFont(font);
         titleText.setString("Game Title");
         titleText.setCharacterSize(60);
         titleText.setFillColor(sf::Color::White);
-        float titleX = (1200.f - titleText.getLocalBounds().width) / 2.f; // Use .f for float division
-        titleText.setPosition(titleX, 500.f); // Use .f for float positions
+        float titleX = (1200.f - titleText.getLocalBounds().width) / 2.f;
+        titleText.setPosition(titleX, 470.f);
 
         playText.setFont(font);
         playText.setString("Play");
         playText.setCharacterSize(40);
         playText.setFillColor(sf::Color::White);
-        float playX = (1200.f - playText.getLocalBounds().width) / 2.f; // Use .f for float division
-        playText.setPosition(playX, 600.f); // Use .f for float positions
+        float playX = (1200.f - playText.getLocalBounds().width) / 2.f;
+        playText.setPosition(playX, 570.f);
+
+        howToPlayText.setFont(font);
+        howToPlayText.setString("How to Play");
+        howToPlayText.setCharacterSize(40);
+        howToPlayText.setFillColor(sf::Color::White);
+        float helpX = (1200.f - howToPlayText.getLocalBounds().width) / 2.f;
+        howToPlayText.setPosition(helpX, 640.f);
 
         exitText.setFont(font);
         exitText.setString("Exit");
         exitText.setCharacterSize(40);
         exitText.setFillColor(sf::Color::White);
-        float exitX = (1200.f - exitText.getLocalBounds().width) / 2.f; // Use .f for float division
-        exitText.setPosition(exitX, 700.f); // Use .f for float positions
+        float exitX = (1200.f - exitText.getLocalBounds().width) / 2.f;
+        exitText.setPosition(exitX, 710.f);
     }
 
     void handleEvent(const sf::Event& event, sf::RenderWindow& window) override {
@@ -850,13 +870,16 @@ public:
             activateSelection(window);
         } else if (event.type == sf::Event::KeyPressed) {
             switch (event.key.code) {
+                case sf::Keyboard::Escape:
+                    window.close();
+                    break;
                 case sf::Keyboard::Up:
                 case sf::Keyboard::W:
-                    selectedIndex = 0;
+                    selectedIndex = (selectedIndex + 2) % 3;
                     break;
                 case sf::Keyboard::Down:
                 case sf::Keyboard::S:
-                    selectedIndex = 1;
+                    selectedIndex = (selectedIndex + 1) % 3;
                     break;
                 case sf::Keyboard::Return:
                 case sf::Keyboard::Space:
@@ -870,26 +893,115 @@ public:
 
     void handleInput(sf::RenderWindow& window) override {
         playText.setFillColor(selectedIndex == 0 ? sf::Color::Red : sf::Color::White);
-        exitText.setFillColor(selectedIndex == 1 ? sf::Color::Red : sf::Color::White);
+        howToPlayText.setFillColor(selectedIndex == 1 ? sf::Color::Red : sf::Color::White);
+        exitText.setFillColor(selectedIndex == 2 ? sf::Color::Red : sf::Color::White);
     }
 
     void update() override {
-        // Update menu state
     }
 
     void render(sf::RenderWindow& window) override {
         window.draw(backgroundSprite);
         window.draw(titleText);
         window.draw(playText);
+        window.draw(howToPlayText);
         window.draw(exitText);
     }
 
    std::unique_ptr<GameState> nextState() override {
     if (switchToPlay) {
-        return make_state<GamePlayState>();  
+        return make_state<GamePlayState>();
+    }
+    if (switchToHowToPlay) {
+        return make_state<HowToPlayState>();
     }
     return nullptr;
 }
+};
+
+class HowToPlayState : public GameState {
+private:
+    sf::Font font;
+    sf::Texture backgroundTexture;
+    sf::Sprite backgroundSprite;
+    sf::Text titleText;
+    sf::Text instructionsText;
+    sf::Text backText;
+    bool returnToMenu = false;
+
+public:
+    HowToPlayState() {
+        if (!font.loadFromFile("menu/menu.otf")) {
+            std::cout << "menu.otf font not loaded" << std::endl;
+        }
+        if (!backgroundTexture.loadFromFile("menu/backgroundmenu.png")) {
+            std::cout << "background_menu.png image not loaded" << std::endl;
+        }
+        backgroundSprite.setTexture(backgroundTexture);
+        backgroundSprite.setScale(1080.f / backgroundSprite.getLocalBounds().width, 800.f / backgroundSprite.getLocalBounds().height);
+
+        titleText.setFont(font);
+        titleText.setString("How to Play");
+        titleText.setCharacterSize(54);
+        titleText.setFillColor(sf::Color::White);
+        titleText.setPosition(300.f, 90.f);
+
+        instructionsText.setFont(font);
+        instructionsText.setCharacterSize(28);
+        instructionsText.setFillColor(sf::Color::White);
+        instructionsText.setString(
+            "Move: WASD or Arrow Keys\n"
+            "Shoot: Space\n"
+            "Mute music: M\n"
+            "Pause/Back to menu: Escape\n\n"
+            "Collect gold and gems for points.\n"
+            "Avoid enemies and their bullets.\n"
+            "When you collect all gold, go to the exit tile."
+        );
+        instructionsText.setPosition(180.f, 220.f);
+
+        backText.setFont(font);
+        backText.setCharacterSize(30);
+        backText.setFillColor(sf::Color::Yellow);
+        backText.setString("Press Enter, Space or Escape to return");
+        backText.setPosition(180.f, 670.f);
+    }
+
+    void handleEvent(const sf::Event& event, sf::RenderWindow& window) override {
+        if (event.type == sf::Event::KeyPressed) {
+            switch (event.key.code) {
+                case sf::Keyboard::Escape:
+                case sf::Keyboard::Return:
+                case sf::Keyboard::Space:
+                    returnToMenu = true;
+                    break;
+                default:
+                    break;
+            }
+        } else if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
+            returnToMenu = true;
+        }
+    }
+
+    void handleInput(sf::RenderWindow& window) override {
+    }
+
+    void update() override {
+    }
+
+    void render(sf::RenderWindow& window) override {
+        window.draw(backgroundSprite);
+        window.draw(titleText);
+        window.draw(instructionsText);
+        window.draw(backText);
+    }
+
+    std::unique_ptr<GameState> nextState() override {
+        if (returnToMenu) {
+            return make_state<MenuState>();
+        }
+        return nullptr;
+    }
 };
 
 class Game {
