@@ -27,3 +27,4 @@ cmake_install.cmake
 
 # Ignore logs
 *.log.idea/workspace.xml
+.idea/
