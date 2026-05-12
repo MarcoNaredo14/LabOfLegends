@@ -26,4 +26,4 @@ CMakeCache.txt
 cmake_install.cmake
 
 # Ignore logs
-*.log
+*.log.idea/workspace.xml
